@@ -1,2 +1,26 @@
 @baseColor: #fff;
 @borderColor: #ddd;
+
+.border-radius(@px) {
+    -webkit-border-radius: @px;
+    -moz-border-radius: @px;
+    -ms-border-radius: @px;
+    -o-border-radius: @px;
+    border-radius: @px;
+}
+
+.box-sizing(@type) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing: @type;
+    -ms-box-sizing: @type;
+    -o-box-sizing: @type;
+    box-sizing: @type;
+}
+
+.transition(@target, @time) {
+    -webkit-transition: @target @time;
+    -moz-transition: @target @time;
+    -ms-transition: @target @time;
+    -o-transition: @target @time;
+    transition: @target @time;
+}
