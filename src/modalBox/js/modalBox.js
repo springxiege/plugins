@@ -19,11 +19,21 @@ var modalBox = modalBox || function() {
         }
         return base;
     };
-
-    dialogs.alert = function(){
-        return {
-            type: 'alert'
+    /**
+     * [register description]
+     * @param  {[type]} name    [description]
+     * @param  {[type]} Factory [description]
+     * @return {[type]}         [description]
+     */
+    var register = function(name, Factory) {
+        var defaults = {
+            dialog: null,
+            factory: Factory
         };
+        return dialogs[name] = defaults;
+    };
+    dialogs.alert = function(){
+
     };
     dialogs.confirm = function(){
         return {};
