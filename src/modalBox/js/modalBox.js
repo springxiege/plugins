@@ -21,13 +21,15 @@ var modalBox = modalBox || function() {
     };
 
     dialogs.alert = function(){
-
+        return {
+            type: 'alert'
+        };
     };
     dialogs.confirm = function(){
-        
+        return {};
     };
     dialogs.info = function(){
-
+        return {};
     };
     return dialogs;
 };
