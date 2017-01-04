@@ -9,6 +9,7 @@
 </head>
 <body>
     <input type="button" value="alert" class="j-alert">
+    <input type="button" value="confirm" class="j-confirm">
     <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
     <script src="js/modalBox.js"></script>
     <script type="text/javascript">
@@ -30,6 +31,16 @@
                         alert('关闭第一个框')
                     }
                 });
+            });
+            $('.j-confirm').click(function(){
+                modalBox.confirm('确定要删除此项目吗？', {
+                    okbtn: function(){
+
+                    },
+                    cancelbtn: function(){
+                        
+                    }
+                })
             })
         })
     </script>

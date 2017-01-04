@@ -57,10 +57,10 @@ var modalBox = modalBox || (function() {
 
     };
     dialogs.confirm = function(){
-        return {};
+
     };
     dialogs.info = function(){
-        return {};
+        
     };
     return dialogs;
 })();
