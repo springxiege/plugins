@@ -1,6 +1,13 @@
 /**
  * modalBox的alert方法
  */
+/**
+ * [alert 模拟window.alert方法]
+ * @param [title,msg,options]
+ * @author Heiyu
+ * @createAt 2017/01/11
+ * @type {[type]}
+ */
  modalBox.register('alert', function(title, msg, options){
      var _this = this,
         _title, _msg, _options
@@ -35,7 +42,7 @@
          }
      }
      if(!!opts.okbtn){
-         $alert.append('<p><span class="btn btn-primary alert-ok j-okbtn">确定</span>');
+         $alert.append('<p><span class="obtn obtn-primary alert-ok j-okbtn">确定</span>');
      }
      if(!!opts.iconClass){
          $alert.find('.alert-content').before('<h5><i class="' + opts.iconClass + '"></i></h5>');

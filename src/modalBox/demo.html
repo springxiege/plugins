@@ -5,11 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Demo</title>
+    <style>
+    input,button{margin: 0;padding: 0;}
+    </style>
     <link rel="stylesheet" href="css/modalBox.css">
+    <link rel="stylesheet" href="css/buttons.css">
 </head>
 <body>
-    <input type="button" value="alert" class="j-alert">
-    <input type="button" value="confirm" class="j-confirm">
+    <section>
+        <h3>a标签小按钮</h3>
+        <p>
+            <a href="#" class="obtn obtn-ms">按钮1</a>
+            <a href="#" class="obtn obtn-primary obtn-ms">按钮2</a>
+            <a href="#" class="obtn obtn-success obtn-ms">按钮3</a>
+            <a href="#" class="obtn obtn-info obtn-ms">按钮4</a>
+            <a href="#" class="obtn obtn-warning obtn-ms">按钮5</a>
+            <a href="#" class="obtn obtn-danger obtn-ms">按钮6</a>
+            <a href="#" class="obtn obtn-default obtn-ms">按钮7</a>
+
+            <a href="#" class="obtn obtn-primary obtn-block obtn-ms">按钮8</a>
+            <a href="#" class="obtn obtn-success obtn-block obtn-ms">按钮8</a>
+            <a href="#" class="obtn obtn-info obtn-block obtn-ms">按钮8</a>
+            <a href="#" class="obtn obtn-warning obtn-block obtn-ms">按钮8</a>
+            <a href="#" class="obtn obtn-danger obtn-block obtn-ms">按钮8</a>
+            <a href="#" class="obtn obtn-default obtn-block obtn-ms">按钮8</a>
+        </p>
+        <h3>a标签默认按钮</h3>
+        <p>
+            <a href="#" class="obtn">按钮1</a>
+            <a href="#" class="obtn obtn-primary">按钮2</a>
+            <a href="#" class="obtn obtn-success">按钮3</a>
+            <a href="#" class="obtn obtn-info">按钮4</a>
+            <a href="#" class="obtn obtn-warning">按钮5</a>
+            <a href="#" class="obtn obtn-danger">按钮6</a>
+            <a href="#" class="obtn obtn-default">按钮7</a>
+
+            <a href="#" class="obtn obtn-primary obtn-block">按钮8</a>
+            <a href="#" class="obtn obtn-success obtn-block">按钮8</a>
+            <a href="#" class="obtn obtn-info obtn-block">按钮8</a>
+            <a href="#" class="obtn obtn-warning obtn-block">按钮8</a>
+            <a href="#" class="obtn obtn-danger obtn-block">按钮8</a>
+            <a href="#" class="obtn obtn-default obtn-block">按钮8</a>
+        </p>
+        <h3>a标签大按钮</h3>
+        <p>
+            <a href="#" class="obtn obtn-lg">按钮1</a>
+            <a href="#" class="obtn obtn-primary obtn-lg">按钮2</a>
+            <a href="#" class="obtn obtn-success obtn-lg">按钮3</a>
+            <a href="#" class="obtn obtn-info obtn-lg">按钮4</a>
+            <a href="#" class="obtn obtn-warning obtn-lg">按钮5</a>
+            <a href="#" class="obtn obtn-danger obtn-lg">按钮6</a>
+            <a href="#" class="obtn obtn-default obtn-lg">按钮7</a>
+
+            <a href="#" class="obtn obtn-primary obtn-block obtn-lg">按钮8</a>
+            <a href="#" class="obtn obtn-success obtn-block obtn-lg">按钮8</a>
+            <a href="#" class="obtn obtn-info obtn-block obtn-lg">按钮8</a>
+            <a href="#" class="obtn obtn-warning obtn-block obtn-lg">按钮8</a>
+            <a href="#" class="obtn obtn-danger obtn-block obtn-lg">按钮8</a>
+            <a href="#" class="obtn obtn-default obtn-block obtn-lg">按钮8</a>
+        </p>
+    </section>
+    <section>
+        <h3>input标签小按钮</h3>
+        <p>
+            <input type="button" value="按钮1" class="obtn obtn-ms">
+            <input type="button" value="按钮2" class="obtn obtn-primary obtn-ms">
+            <input type="button" value="按钮3" class="obtn obtn-success obtn-ms">
+            <input type="button" value="按钮4" class="obtn obtn-info obtn-ms">
+            <input type="button" value="按钮5" class="obtn obtn-warning obtn-ms">
+            <input type="button" value="按钮6" class="obtn obtn-danger obtn-ms">
+            <input type="button" value="按钮7" class="obtn obtn-default obtn-ms">
+        </p>
+        <h3>input标签默认按钮</h3>
+        <p>
+            <input type="button" value="按钮1" class="obtn">
+            <input type="button" value="按钮2" class="obtn obtn-primary">
+            <input type="button" value="按钮3" class="obtn obtn-success">
+            <input type="button" value="按钮4" class="obtn obtn-info">
+            <input type="button" value="按钮5" class="obtn obtn-warning">
+            <input type="button" value="按钮6" class="obtn obtn-danger">
+            <input type="button" value="按钮7" class="obtn obtn-default">
+        </p>
+        <h3>input标签大按钮</h3>
+        <p>
+            <input type="button" value="按钮1" class="obtn obtn-lg">
+            <input type="button" value="按钮2" class="obtn obtn-primary obtn-lg">
+            <input type="button" value="按钮3" class="obtn obtn-success obtn-lg">
+            <input type="button" value="按钮4" class="obtn obtn-info obtn-lg">
+            <input type="button" value="按钮5" class="obtn obtn-warning obtn-lg">
+            <input type="button" value="按钮6" class="obtn obtn-danger obtn-lg">
+            <input type="button" value="按钮7" class="obtn obtn-default obtn-lg">
+        </p>
+    </section>
+    <section>
+        <h3>button标签小按钮</h3>
+        <p>
+            <button class="obtn obtn-ms">按钮1</button>
+            <button class="obtn obtn-primary obtn-ms">按钮2</button>
+            <button class="obtn obtn-success obtn-ms">按钮3</button>
+            <button class="obtn obtn-info obtn-ms">按钮4</button>
+            <button class="obtn obtn-warning obtn-ms">按钮5</button>
+            <button class="obtn obtn-danger obtn-ms">按钮6</button>
+            <button class="obtn obtn-default obtn-ms">按钮7</button>
+        </p>
+        <h3>button标签默认按钮</h3>
+        <p>
+            <button class="obtn">按钮1</button>
+            <button class="obtn obtn-primary">按钮2</button>
+            <button class="obtn obtn-success">按钮3</button>
+            <button class="obtn obtn-info">按钮4</button>
+            <button class="obtn obtn-warning">按钮5</button>
+            <button class="obtn obtn-danger">按钮6</button>
+            <button class="obtn obtn-default">按钮7</button>
+        </p>
+        <h3>button标签小按钮</h3>
+        <p>
+            <button class="obtn">按钮1</button>
+            <button class="obtn obtn-primary obtn-lg">按钮2</button>
+            <button class="obtn obtn-success obtn-lg">按钮3</button>
+            <button class="obtn obtn-info obtn-lg">按钮4</button>
+            <button class="obtn obtn-warning obtn-lg">按钮5</button>
+            <button class="obtn obtn-danger obtn-lg">按钮6</button>
+            <button class="obtn obtn-default obtn-lg">按钮7</button>
+        </p>
+    </section>
+    <section>
+        <h3>块元素标签小按钮</h3>
+        <p>
+            <div class="obtn obtn-ms">按钮1</div>
+            <div class="obtn obtn-primary obtn-ms">按钮2</div>
+            <div class="obtn obtn-success obtn-ms">按钮3</div>
+            <div class="obtn obtn-info obtn-ms">按钮4</div>
+            <div class="obtn obtn-warning obtn-ms">按钮5</div>
+            <div class="obtn obtn-danger obtn-ms">按钮6</div>
+            <div class="obtn obtn-default obtn-ms">按钮7</div>
+        </p>
+        <h3>块元素标签默认按钮</h3>
+        <p>
+            <div class="obtn">按钮1</div>
+            <div class="obtn obtn-primary">按钮2</div>
+            <div class="obtn obtn-success">按钮3</div>
+            <div class="obtn obtn-info">按钮4</div>
+            <div class="obtn obtn-warning">按钮5</div>
+            <div class="obtn obtn-danger">按钮6</div>
+            <div class="obtn obtn-default">按钮7</div>
+        </p>
+        <h3>块元素标签大按钮</h3>
+        <p>
+            <div class="obtn obtn-lg">按钮1</div>
+            <div class="obtn obtn-primary obtn-lg">按钮2</div>
+            <div class="obtn obtn-success obtn-lg">按钮3</div>
+            <div class="obtn obtn-info obtn-lg">按钮4</div>
+            <div class="obtn obtn-warning obtn-lg">按钮5</div>
+            <div class="obtn obtn-danger obtn-lg">按钮6</div>
+            <div class="obtn obtn-default obtn-lg">按钮7</div>
+        </p>
+    </section>
+
+    <p>
+        <input type="button" value="alert" class="j-alert obtn obtn-default">
+        <input type="button" value="confirm" class="j-confirm obtn obtn-primary">
+    </p>
+
     <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
     <script src="js/modalBox.js"></script>
     <script src="js/modalBox.alert.js"></script>

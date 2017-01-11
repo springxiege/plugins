@@ -1,0 +1,115 @@
+@color: #fff;
+@default-color: #666;
+@default: #d7d7d7;
+@default-hover: #eaeaea;
+@primary: #0089cd;
+@primary-hover: #019be7;
+@success: #7ac132;
+@success-hover: #8bd342;
+@info: #2da7df;
+@info-hover: #41b3e7;
+@warning: #fc7544;
+@warning-hover: #fe885d;
+@danger: #ff4646;
+@danger-hover: #fe6060;
+
+.border-radius(@radius){
+    -webkit-border-radius:@radius ;
+    -moz-border-radius:@radius ;
+    -ms-border-radius:@radius ;
+    -o-border-radius:@radius ;
+    border-radius:@radius ;
+}
+.box-sizing(@type){
+    -webkit-box-sizing: @type;
+    -moz-box-sizing: @type;
+    -ms-box-sizing: @type;
+    -o-box-sizing: @type;
+    box-sizing: @type;
+}
+a.obtn,
+input.obtn,
+button.obtn,
+div.obtn,
+p.obtn,
+span.obtn,
+i.obtn,
+b.obtn,
+small.obtn
+section.obtn{
+    color: @color;
+    background-color: @default;
+    text-decoration: none;
+    border:0;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+    cursor: pointer;
+    .box-sizing(content-box);
+    &:hover {
+        background-color: @default-hover;
+    }
+    &.obtn-block {
+        display: block;
+        margin: 0;
+    }
+}
+.obtn{
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    padding: 7px 20px;
+    font-size: 14px;
+    text-align: center;
+    color: @color;
+    background-color: @default;
+    margin: 5px;
+    .border-radius(3px);
+    &:hover {
+        background-color: @default-hover;
+    }
+    // button颜色
+    &.obtn-primary {
+        background-color: @primary;
+        &:hover {
+            background-color: @primary-hover;
+        }
+    }
+    &.obtn-success {
+        background-color: @success;
+        &:hover {
+            background-color: @success-hover;
+        }
+    }
+    &.obtn-info {
+        background-color: @info;
+        &:hover {
+            background-color: @info-hover;
+        }
+    }
+    &.obtn-warning{
+        background-color: @warning;
+        &:hover {
+            background-color: @warning-hover;
+        }
+    }
+    &.obtn-danger {
+        background-color: @danger;
+        &:hover {
+            background-color: @danger-hover;
+        }
+    }
+    &.obtn-default {
+        color: @default-color;
+    }
+    // button尺寸
+    &.obtn-ms {
+        height: 12px;
+        line-height: 12px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    &.obtn-lg {
+        padding: 9px 25px;
+    }
+}
