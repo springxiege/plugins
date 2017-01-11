@@ -12,12 +12,17 @@
     <input type="button" value="confirm" class="j-confirm">
     <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
     <script src="js/modalBox.js"></script>
+    <script src="js/modalBox.alert.js"></script>
     <script type="text/javascript">
         $(function(){
             $('.j-alert').click(function(){
                 modalBox.alert('这个是alert框',{
                     okbtn: function(){
-                        modalBox.alert('这是第二个alert框',{
+                        modalBox.alert('温馨提示','这是第二个alert框',{
+                            css: {
+                                width: 300,
+                                height: 180
+                            },
                             iconClass: 'icon-success',
                             okbtn: function($alert){
                                 $alert.close();
@@ -38,7 +43,7 @@
 
                     },
                     cancelbtn: function(){
-                        
+
                     }
                 })
             })
