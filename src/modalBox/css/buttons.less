@@ -27,6 +27,13 @@
     -o-box-sizing: @type;
     box-sizing: @type;
 }
+.rotate(@deg){
+    -webkit-transform: rotate(@deg);
+    -moz-transform: rotate(@deg);
+    -ms-transform: rotate(@deg);
+    -o-transform: rotate(@deg);
+    transform: rotate(@deg);
+}
 a.obtn,
 input.obtn,
 button.obtn,
@@ -47,6 +54,7 @@ section.obtn{
     cursor: pointer;
     .box-sizing(content-box);
     &:hover {
+        color: @color;
         background-color: @default-hover;
     }
 }
@@ -97,10 +105,15 @@ section.obtn{
     }
     &.obtn-default {
         color: @default-color;
+        &:hover {
+            color: @default-color;
+        }
     }
     &.obtn-block {
         display: block;
         margin: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     // button尺寸
     &.obtn-ms {
@@ -111,5 +124,62 @@ section.obtn{
     }
     &.obtn-lg {
         padding: 9px 25px;
+    }
+    > .obtn-icon-ok,
+    > .obtn-icon-cancel {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        .border-radius(50%);
+        .box-sizing(border-box);
+        border: 2px solid #fff;
+        margin-right: 8px;
+        vertical-align: -1px;
+        position: relative;
+        &::before,
+        &::after {
+            display: inline-block;
+            position: absolute;
+            left: 2px;
+            top: 4px;
+            background-color: #fff;
+            content: '';
+            .rotate(-45deg);
+        }
+    }
+    > .obtn-icon-ok {
+        &::before {
+            width: 8px;
+            height: 2px;
+        }
+        &::after {
+            width: 2px;
+            height: 4px;
+
+        }
+    }
+    > .obtn-icon-cancel {
+        &::before {
+            width: 8px;
+            height: 2px;
+            left: 1px;
+            top: 4px;
+        }
+        &::after {
+            width: 2px;
+            height: 8px;
+            top: 1px;
+            left: 4px;
+        }
+    }
+    &.obtn-default {
+        > .obtn-icon-ok,
+        > .obtn-icon-cancel{
+            border-color: @default-color;
+            &::before,
+            &::after {
+                background-color: @default-color;
+            }
+        }
     }
 }
