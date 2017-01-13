@@ -10,7 +10,7 @@
  */
  modalBox.register('alert', function(title, msg, options){
      var _this = this,
-        _title, _msg, _options
+        _title, _msg, _options;
      var defaults = {
          css: {},
          manul:true,
