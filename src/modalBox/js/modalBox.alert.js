@@ -12,11 +12,17 @@
      var _this = this,
         _title, _msg, _options;
      var defaults = {
-         css: {},
+         css: {
+             okbtn: true,
+             cancelbtn: false,
+             okbtnText: '确定',
+             cancelbtnText: '取消'
+         },
          manul:true,
          iconClass: null,
          okbtn: function(){},
-         cancelbtn: function(){}
+         cancelbtn: function(){},
+         closebtn: function(){}
      };
      if($.isPlainObject(msg)){
          _options = msg;
@@ -41,8 +47,11 @@
              $alert.css('margin-top', -opts.css.height/2 + 'px')
          }
      }
-     if(!!opts.okbtn){
-         $alert.append('<p><span class="obtn obtn-primary alert-ok j-okbtn">确定</span>');
+     if(!!opts.css.okbtn){
+         $alert.append('<p class="j-btns"><span class="obtn obtn-primary alert-ok j-okbtn">'+opts.css.okbtnText+'</span>');
+     }
+     if(!!opts.css.cancelbtn){
+         $alert.find('.j-btns').append('<span class="obtn obtn-default alert-cancel j-cancel">'+opts.css.cancelbtnText+'</span>')
      }
      if(!!opts.iconClass){
          $alert.find('.alert-content').before('<h5><i class="' + opts.iconClass + '"></i></h5>');
@@ -55,7 +64,7 @@
          .on('click','.j-close',function(){
              _this.mask.hide($alert);
              $alert.remove();
-             opts.okbtn && opts.cancelbtn($alert);
+             opts.cancelbtn && opts.cancelbtn($alert);
          })
          .on('click','.j-okbtn',function(){
              !opts.manul && _this.mask.hide($alert);

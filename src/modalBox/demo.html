@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="css/buttons.css">
 </head>
 <body>
+    <p>
+        <input type="button" value="show" class="j-show obtn obtn-warning">
+        <input type="button" value="alert" class="j-alert obtn obtn-default">
+        <input type="button" value="confirm" class="j-confirm obtn obtn-primary">
+    </p>
     <section>
         <h3>a标签小按钮</h3>
         <p>
@@ -162,14 +167,13 @@
         </p>
     </section>
 
-    <p>
-        <input type="button" value="alert" class="j-alert obtn obtn-default">
-        <input type="button" value="confirm" class="j-confirm obtn obtn-primary">
-    </p>
+
 
     <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
     <script src="js/modalBox.js"></script>
     <script src="js/modalBox.alert.js"></script>
+    <script src="js/modalBox.confirm.js"></script>
+    <script src="js/modalBox.show.js"></script>
     <script type="text/javascript">
         $(function(){
             $('.j-alert').click(function(){
@@ -201,6 +205,21 @@
                     },
                     cancelbtn: function(){
 
+                    }
+                })
+            })
+            $('.j-show').click(function(){
+                modalBox.show('警告！','确定要看到这个页面吗？',{
+                    btns:{
+                        cancelbtn: false,
+                        okbtnText: 'ok',
+                        cancelbtnText: 'cancel'
+                    },
+                    ok: function($show){
+                        // alert('执行确定操作')
+                    },
+                    cancel: function($show){
+                        // alert('执行取消操作')
                     }
                 })
             })
