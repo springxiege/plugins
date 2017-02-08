@@ -3,8 +3,4 @@
  * @type {[HTML]}
  */
 var modalBox = modalBox || {};
-modalBox.tpl = {
-    info: '',
-    alert: '',
-    confirm: ''
-};
+modalBox.tpl = {};
