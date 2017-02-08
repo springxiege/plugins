@@ -18,24 +18,32 @@
             //  iconClass: null,  // 默认无小图标，如果要有小图标则传入对应的class名，自己设置css样式
          },
          btns:{
+             btnPosition: 'center', // 按钮位置 [left,center,right]
              okbtn: true,  // 默认显示确定按钮
              cancelbtn: true,  // 默认显示取消按钮
              okbtnText: '确定',  // 默认显示确定按钮的内容，可自定义
              cancelbtnText: '取消',  // 默认显示取消按钮的内容，可自定义
              btnIcon: false,  // 按钮是否带有小图标，默认无，为true则显示小图标
          },
+         contentType: 'text', // 内容类型，默认为text,当为html时即不加入p标签。
          manul: false,  // 手动关闭弹窗模式，默认为false即点击确定、取消、关闭按钮后自行关闭自身弹窗
          ok: function(){},  // 确定按钮的回调函数
          cancel: function(){},  // 取消按钮的回调函数
+         init: function(){},  // 初始化弹框时调用函数
          close: null,  // 关闭按钮的回调函数，默认为null时执行的函数即cancel按钮的回调函数否则执行自己的回调函数
      };
-     if($.isPlainObject(msg)){
-         _options = msg;
+     if(arguments.length === 1){
          _msg = title;
-     }else {
-         _title = title;
-         _msg = msg;
-         _options = options;
+     }
+     if(arguments.length > 1){
+         if($.isPlainObject(msg)){
+             _options = msg;
+             _msg = title;
+         }else {
+             _title = title;
+             _msg = msg;
+             _options = options;
+         }
      }
      var opts = $.extend(true, {}, defaults, _options || {});
      var $alert = $('<div class="modal-alert"><span class="alert-close j-close">&times;</span><div class="alert-content"></div></div>');
@@ -51,19 +59,22 @@
          if(opts.css.height){
              $alert.css('margin-top', -opts.css.height/2 + 'px')
          }
-     }
+     };
      if(!!opts.btns.okbtn){
-         $alert.append('<p class="j-btns"><span class="obtn obtn-primary alert-ok j-okbtn">'+ (opts.btns.btnIcon ? '<i class="obtn-icon-ok"></i>':'')+opts.btns.okbtnText+'</span>');
-     }
+         $alert.append('<p class="j-btns" style="text-align:'+opts.btns.btnPosition+'"><span class="obtn obtn-primary alert-ok j-okbtn">'+ (opts.btns.btnIcon ? '<i class="obtn-icon-ok"></i>':'')+opts.btns.okbtnText+'</span>');
+     };
      if(!!opts.btns.cancelbtn){
          $alert.find('.j-btns').append('<span class="obtn obtn-default alert-cancel j-cancel">'+(opts.btns.btnIcon ? '<i class="obtn-icon-cancel"></i>':'')+opts.btns.cancelbtnText+'</span>')
-     }
+     };
      if(!!opts.css.iconClass){
          $alert.find('.alert-content').before('<h5><i class="' + opts.iconClass + '"></i></h5>');
-     }
+     };
      if(_title){
          $alert.find('.alert-content').before($('<h6/>').html(_title));
-     }
+     };
+     if(opts.contentType == 'text') {
+         _msg = "<p>" + _msg + "</p>"
+     };
      $alert.find('.alert-content').html(_msg)
          .end()
          .on('click','.j-close',function(){
@@ -88,4 +99,5 @@
 
      _this.mask.show();
      $('body').append($alert);
+     opts.init && opts.init($alert);
  });
